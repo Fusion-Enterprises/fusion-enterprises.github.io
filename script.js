@@ -3,11 +3,6 @@ const currentPage = path.split("/").pop() || "index.html";
 
 
 
-if (bgImages[currentPage]) {
-  document.body.style.background = `url('${bgImages[currentPage]}') no-repeat center top fixed`;
-  document.body.style.backgroundSize = "cover";
-} 
-
     window.addEventListener("DOMContentLoaded", function () {
     
     // === INJECT UI ELEMENTS (Preloader, Back-to-Top, Scroll Progress) ===
@@ -200,9 +195,6 @@ window.addEventListener('scroll', () => {
 
   // 3. Parallax Background Effect
   // Moves background at 30% speed of scroll for depth effect (Desktop only)
-  if (bgImages[currentPage] && window.innerWidth > 768) {
-    document.body.style.backgroundPositionY = -(winScroll * 0.3) + "px";
-  }
 });
 
 // Back to Top Click Event
