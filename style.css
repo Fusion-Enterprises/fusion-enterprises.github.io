@@ -2890,3 +2890,54 @@ header.sticky-header.scrolled {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Final Mobile Footer Fix */
+@media (max-width: 768px) {
+  .footer-v2 {
+    padding: 40px 0 !important;
+  }
+
+  .footer-v2-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    gap: 30px !important; /* Adds space between stacked sections */
+  }
+
+  .footer-brand, 
+  .footer-contact, 
+  .footer-social {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-brand img {
+    margin: 0 auto 15px !important;
+    max-width: 150px !important;
+  }
+
+  .footer-brand p, 
+  .footer-contact p, 
+  .footer-social p {
+    max-width: 300px !important; /* Prevents text from stretching too wide */
+    margin: 5px auto !important;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center !important;
+    margin-top: 10px !important;
+  }
+  
+  /* Fix for the very bottom copyright line */
+  .footer-bottom {
+    margin-right: 0 !important; /* Removes the 75px margin found in your CSS */
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
