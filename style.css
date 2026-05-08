@@ -3030,26 +3030,144 @@ header.sticky-header.scrolled {
     text-align: center;
   }
 }
-.dropdown {
-        position: relative !important;
-        padding-bottom: 25px !important; /* Closes the gap between link and menu */
-        margin-bottom: -25px !important; /* Prevents the header from getting taller */
-    }
+/* ===== GLOBAL FIXES FOR NEW SECTIONS ===== */
+.section-spacer {
+    padding: 60px 0;
+    width: 100%;
+}
 
-    /* 2. Anchor the menu to the right side so it expands leftward into the screen */
-    .dropdown-content {
-        position: absolute !important;
-        top: 100% !important;
-        
-        /* This is the magic fix: Align right edges, auto the left */
-        left: auto !important;
-        right: 0 !important; 
-        
-        /* Width control for laptops */
-        width: 800px !important; /* You can adjust this width if needed */
-        max-width: 85vw !important; /* Safety net for smaller laptop screens */
-        
-        /* Remove any centering transforms */
-        transform: none !important; 
-    }
-    
+/* ===== MINI-HERO (FOR SUB-PAGES) ===== */
+.sub-page-hero {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; /* Space for your sticky header */
+    margin-bottom: 2rem;
+}
+
+.hero-glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero-glass-card h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--neon-accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.hero-glass-card p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ===== STATS GRID (FOR INDEX) ===== */
+.stats-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(0, 238, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 238, 255, 0.2);
+    padding: 50px 0;
+    margin: 40px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 3rem;
+    color: var(--neon-accent);
+    margin: 0;
+    font-weight: 700;
+}
+
+.stat-box p {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+    .sub-page-hero { min-height: 30vh; padding-top: 140px; }
+    .hero-glass-card { padding: 1.5rem; }
+    .stat-box h2 { font-size: 2.2rem; }
+}
+/* ── CTA Banner ── */
+.cta-banner2 {
+  background: linear-gradient(135deg, rgba(0, 140, 110, 0.8), rgba(0, 20, 40, 0.9));
+  border-top: 1px solid rgba(0, 238, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 238, 255, 0.2);
+  padding: 60px 20px;
+}
+.cta-banner2-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.cta-text h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.cta-text p {
+  color: #aaa;
+  font-size: 1.05rem;
+}
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-hero-primary2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #00c77b, #005f82);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 20px rgba(0, 146, 199, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 238, 255, 0.3);
+}
+.btn-hero-primary2:hover {
+  background: linear-gradient(135deg, #005f82, #00c77b);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(0, 146, 199, 0.6);
+}
