@@ -3172,7 +3172,7 @@ header.sticky-header.scrolled {
   box-shadow: 0 6px 30px rgba(0, 146, 199, 0.6);
 }
 /* MOBILE FIXES */
-@/* MOBILE FIXES */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
     /* 1. Allow the section to grow with the content */
     .hero-stats {
@@ -3224,27 +3224,44 @@ header.sticky-header.scrolled {
     }
 }
 @media (max-width: 768px) {
-    /* Allow the stats section to be as tall as the content */
+    /* 1. Force the hero section down further */
+    .hero-section {
+        padding-top: 180px !important; /* Increased for real mobile headers */
+        margin-top: 0 !important;
+    }
+
+    /* 2. Shrink the massive header text so it takes up less room */
+    header h1 {
+        font-size: 2.2rem !important; 
+        line-height: 1.2;
+    }
+
+    .logo-container img {
+        width: 120px !important;
+    }
+}
+@media (max-width: 768px) {
+    /* Kill the fixed height that causes the 'cutoff' line */
     .hero-stats {
         height: auto !important; 
         min-height: unset !important;
-        padding: 40px 0 !important;
-        margin-top: 20px;
+        padding-bottom: 60px !important; /* Extra space to see the rounded bottom */
+        overflow: visible !important;
     }
 
-    /* Remove the 'overflow: hidden' that is likely cutting off your rounded corners */
     .hero-glass-card {
         height: auto !important;
-        overflow: visible !important; 
-        margin: 0 15px;
-        border-radius: 30px; /* Ensure corners stay rounded */
+        overflow: visible !important;
+        display: block !important; /* Ensures it expands vertically */
+        border-radius: 25px !important; /* Force re-application of corners */
+        margin-bottom: 20px;
     }
 
-    /* Stack the items so they don't squash and disappear */
+    /* Prevent the grid from staying in 'row' mode which squishes content */
     .hero-stats-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        height: auto !important;
     }
 }
