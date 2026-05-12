@@ -2816,7 +2816,7 @@ header.sticky-header.scrolled {
 @media (max-width: 600px) {
   .hero-section {
     padding: 60px 16px 140px;
-    min-height: 100svh;
+    min-height: 125vh;
   }
   .hero-stats {
     gap: 12px;
@@ -3279,7 +3279,7 @@ header.sticky-header.scrolled {
       margin-bottom: 24px;
       text-transform: uppercase;
       animation: heroFadeIn 1s 0.2s ease-out both;
-      position: static;
+      
   }
 
     
